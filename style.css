@@ -13,59 +13,58 @@ body {
   background-color: var(--cor-de-fundo);
   color: var(--branco);
   font-family: "Chakra Petch", sans-serif;
+  margin: 0;
+  padding: 20px 0;
 }
 
 .conteudo-principal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .titulo-principal {
   text-align: left;
   width: 100%;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 .titulo-principal span {
   color: var(--verde);
 }
 
+/* =============== BOTÕES =============== */
+.botoes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+}
+
 .botao {
-  font-family: "Chakra Petch", sans-serif; /* Corrigido */
+  font-family: "Chakra Petch", sans-serif;
   background-color: var(--botao-inativo);
   color: var(--branco);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1em;
+  padding: 1em 1.2em;
   font-size: 18px;
-  width: 100%;
+  border: none;
   border-bottom: 4px solid var(--botao-ativo);
-  border-left: 2px solid var(--botao-ativo);
-  border-right: 2px solid var(--botao-ativo);
-  border-top: none;
+  transition: all 0.3s ease;
+  text-align: left;
+  cursor: pointer;
 }
 
 .botao:first-child {
   border-radius: 40px 40px 0 0;
 }
 
-.botoes {
-  display: block;
-}
-
-@media screen and (min-width: 768px) {
-  .botao:last-child {
-    border-radius: 0 40px 0 0;
-  }
-  .botoes {
-    display: flex;
-  }
+.botao:last-child {
+  border-bottom: none;
 }
 
 .ativo {
@@ -73,10 +72,35 @@ body {
   border-bottom: 4px solid var(--verde);
 }
 
+/* =============== RESPONSIVO =============== */
+@media screen and (min-width: 768px) {
+  .botoes {
+    flex-direction: row;
+  }
+
+  .botao {
+    border-bottom: 4px solid var(--botao-ativo);
+    border-radius: 0;
+    text-align: center;
+    flex: 1;
+  }
+
+  .botao:first-child {
+    border-radius: 40px 0 0 0;
+  }
+
+  .botao:last-child {
+    border-radius: 0 40px 0 0;
+  }
+}
+
+/* =============== CONTEÚDO DAS ABAS =============== */
 .abas-textos {
   background-color: var(--texto-fundo);
-  padding: 40px;
+  padding: 40px 30px;
   border-radius: 0 0 40px 40px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .aba-conteudo {
@@ -90,15 +114,40 @@ body {
 .aba-conteudo-titulo-principal {
   font-size: 28px;
   text-align: center;
+  margin-bottom: 8px;
 }
 
 .aba-conteudo-titulo-secundario {
   text-align: center;
   color: var(--verde);
   text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
+/* =============== CONTADOR =============== */
 .contador {
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contador-digito {
   text-align: center;
+  min-width: 100px;
+}
+
+.contador-digito-numero {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.contador-digito-texto {
+  color: var(--verde);
+  font-size: 20px;
+  margin: 0;
+  text-transform: lowercase;
 }
